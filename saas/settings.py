@@ -27,7 +27,7 @@ SECRET_KEY = config("DJANGO_SECRET_KEY")
 DEBUG = config("DJANGO_DEBUG", cast=bool)
 
 ALLOWED_HOSTS = [
-    "https://saas-django-production-7291.up.railway.app/",
+    "saas-django-production-7291.up.railway.app",
     "localhost",
     "127.0.0.1",
 ]
