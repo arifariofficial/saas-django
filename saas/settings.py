@@ -28,8 +28,6 @@ DEBUG = config("DJANGO_DEBUG", cast=bool)
 
 ALLOWED_HOSTS = [
     "saas-django-production-7291.up.railway.app",
-    "localhost",
-    "127.0.0.1",
 ]
 if DEBUG:
     ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
