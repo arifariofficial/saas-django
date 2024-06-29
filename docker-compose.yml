@@ -1,8 +1,0 @@
-services:
-    web:
-        build: .
-        command: ./paracord_runner.sh
-        ports:
-            - "8000:8000"
-        env_file:
-            - .env
