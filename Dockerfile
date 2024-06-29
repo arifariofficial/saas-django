@@ -40,6 +40,9 @@ COPY requirements.txt /tmp/requirements.txt
 # copy the project code into the container's working directory
 COPY . /code
 
+# Copy the .env file into the container
+COPY .env /code/.env
+
 # Install the Python project requirements
 RUN pip install -r /tmp/requirements.txt
 
@@ -54,9 +57,11 @@ ENV DJANGO_DEBUG=${DJANGO_DEBUG}
 # database isn't available during build
 # run any other commands that do not need the database
 # such as:
-RUN python manage.py collectstatic --noinput
 
-# whitenoise
+RUN python manage.py collectstatic --noinput
+# whitenoise -> s3
+
+
 
 
 # set the Django default project name
@@ -81,4 +86,4 @@ RUN apt-get remove --purge -y \
 
 # Run the Django project via the runtime script
 # when the container starts
-CMD ["./paracord_runner.sh"]
+CMD ./paracord_runner.sh
